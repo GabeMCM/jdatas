@@ -1,0 +1,29 @@
+{
+  "1": {
+    "nome": "gabriel",
+    "idade": 40,
+    "altura": 5.1
+  },
+  "2": {
+    "nome": "lucas",
+    "idade": 37,
+    "altura": 5.1
+  },
+  "3": {
+    "nome": "roberta",
+    "idade": 40,
+    "altura": 5.1
+  },
+  "4": {
+    "nome": "roberta",
+    "idade": 24,
+    "altura": 5.1,
+    "comida": "pizza"
+  },
+  "5": {
+    "nome": "gabriel",
+    "idade": 40,
+    "altura": 5.1,
+    "comida": "pizza"
+  }
+}
