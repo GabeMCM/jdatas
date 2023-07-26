@@ -108,46 +108,17 @@
 import Model from "./src/collection/collection.js";
 import File from "./src/fs/file.js";
 
-const path = "C:/Users/Uberaupe01/Documents/JData/dt";
+const path = "./dt";
 const name = "teste";
 
 const f = new File(path, name);
-
-// const data = {
-// 	1: { nome: "gabriel", idade: 40 },
-// 	2: { nome: "lucas", idade: 37 },
-// 	3: { nome: "roberta", idade: 40 },
-// 	4: { nome: "gabriel", idade: 24 },
-// 	5: { nome: "gabriel", idade: 40 },
-// };
-
-// f.save(data);
 
 const m = new Model(name, path);
 const obj = { nome: "gabriel", idade: 40, comida: "pizza" };
 
 try {
-	const data = await m.getAll();
-	const b = await m.findAll(obj);
-	const a = await m.findExactly(obj);
-
-	console.log(data);
-	const newD = { altura: 5.1 };
-	const newg = { comida: "pizza" };
-	for (const key in data) {
-		if (parseInt(key) > 0) {
-			data[key] = { ...data[key], ...newD };
-		}
-		if (parseInt(key) > 3) {
-			data[key] = { ...data[key], ...newg };
-		}
-	}
-
-	f.update(data)
-
-	console.log(data);
-	console.log(a);
-	console.log(b);
+  const result = await f.check();
+  console.log(result);
 } catch (error) {
-	console.log(error);
+  console.log(error);
 }

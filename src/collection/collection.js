@@ -7,22 +7,15 @@ export default class Model {
 		this.file = new File(directory, name);
 	}
 
-  create(data = '{}') {
-    new Promise((resolve, reject) => {
-      
-    })
-  }
-
 	getAll() {
-		const pro = async (resolve, reject) => {
+		return new Promise( async (resolve, reject) => {
 			try {
 				const data = await this.file.read();
 				resolve(data);
 			} catch (error) {
 				reject(error);
 			}
-		};
-		return new Promise(pro);
+		});
 	}
 
 	findAll(obj) {
@@ -69,4 +62,6 @@ export default class Model {
 			}
 		});
 	}
+	
+	
 }
