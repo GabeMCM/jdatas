@@ -7,8 +7,8 @@ export default class JDB {
 
   JData (directory) {
     return {
-      JDModel: (name, cod = null, object) => {
-        return new JModel(name, directory, cod, object)
+      JDModel: (name, object, cod = 0) => {
+        return new JModel(name, directory, object, cod)
       }, 
 
       JDSchema: (Object) => {

@@ -24,6 +24,8 @@ export default class Schema {
           reject(`Property not defined "${prop}".`);
         }
       }
+
+      resolve();
     });
   }
 }
