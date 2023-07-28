@@ -3,7 +3,7 @@
 
 import JModel from "../model/JModel.js";
 
-const Jdata = (directory) => {
+const Jdatas = (directory) => {
   // Função que representa um esquema de validação de dados.
   // Function representing a data validation schema.
   const schema = (obj) => {
@@ -22,4 +22,4 @@ const Jdata = (directory) => {
   };
 };
 
-export default Jdata;
+export default Jdatas;
