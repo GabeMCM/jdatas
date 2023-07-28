@@ -1,7 +1,7 @@
 // Classe que representa um esquema de validação de dados.
 // Class representing a data validation schema.
 
-export default class Schema {
+export default class JSchema {
   constructor(obj) {
     // Objeto que define os tipos esperados para cada propriedade dos dados.
     // Object that defines the expected types for each property of the data.
