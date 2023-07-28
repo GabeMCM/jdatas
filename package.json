@@ -1,15 +1,19 @@
 {
-  "name": "jdata",
+  "name": "localjdb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uma biblioteca para manipulação de dados com suporte a collection, esquemas, e validação em uma pasta local utilizando json.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/jdata.git"
+  },
+  "keywords": ["localjdb", "database", "data", "validation", "schema", "json"],
+  "author": "GabeMCM",
+  "license": "MIT",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1"
   }
 }
