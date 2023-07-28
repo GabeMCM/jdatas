@@ -1,6 +1,6 @@
 {
   "name": "jdatas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uma biblioteca para manipulação de dados com suporte a collection, esquemas, e validação em uma pasta local utilizando json.",
   "main": "index.js",
   "scripts": {
