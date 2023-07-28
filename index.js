@@ -1,5 +1,5 @@
 // Importando as classes e funcionalidades principais do pacote
-import Jdata from './src/jsondtb/jsondtb.js';
+import Jdata from './src/jdatas/jdatas.js';
 
 // Exportando as classes e funcionalidades principais do pacote
-export { Jdata };
+export default Jdata ;
