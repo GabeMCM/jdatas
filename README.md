@@ -27,7 +27,7 @@ const userSchema = db.Schema{
 };
 
 // Crie um modelo para manipular os dados com o esquema definido
-const userModel = db.Model('usuarios', schema);
+const userModel = db.Model('usuarios', userSchema);
 
 // Salve dados no modelo
 try {
