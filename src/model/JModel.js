@@ -21,9 +21,11 @@ export default class JModel {
   // Asynchronous function to save data to the file according to the validation schema.
   async save(data = {}, id = null) {
     try {
-      await this.jschema.validate(data);
+      
+      if (this.objSchema ==! null) {
+        await this.jschema.validate(data);
+      }
       const id_ = await this.id(this.cod);
-
       try {
         await this.file.check();
 
