@@ -22,7 +22,7 @@ export default class JSchema {
 
       // Percorre cada propriedade dos dados fornecidos.
       // Iterate over each property of the provided data.
-      for (const prop in data) {
+      for (const prop in this.obj) {
         // Obtém o tipo esperado para a propriedade atual.
         // Get the expected type for the current property.
         const expectedType = this.obj[prop];
