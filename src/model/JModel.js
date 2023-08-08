@@ -21,11 +21,9 @@ export default class JModel {
   // Asynchronous function to save data to the file according to the validation schema.
   async save(data = {}, id = null) {
     try {
-      
-      if (this.objSchema ==! null) {
-        await this.jschema.validate(data);
-      }
+      await this.jschema.validate(data);
       const id_ = await this.id(this.cod);
+
       try {
         await this.file.check();
 
@@ -185,6 +183,17 @@ export default class JModel {
         console.error(error);
       }
       console.log(`The data ID: '\x1b[32m\x1b[1m${idToDel}\x1b[0m' has deleted with successfully`);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async deleteAllData() {
+    try {
+      const data = await this.getAll();
+      for(const id in data) {
+        await this.deleteById(id)
+      }
     } catch (error) {
       console.error(error);
     }
