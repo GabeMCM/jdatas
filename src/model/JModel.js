@@ -19,9 +19,18 @@ export default class JModel {
 
   // Função assíncrona para salvar os dados no arquivo de acordo com o esquema de validação.
   // Asynchronous function to save data to the file according to the validation schema.
-  async save(data = {}, id = null) {
+  async save(data = {}, id = null, log = true) {
+    const print = (message) => {
+      if (log) {
+        console.log(message)
+      }
+    }
+
     try {
-      await this.jschema.validate(data);
+      if (this.objSchema !== null) {
+        await this.jschema.validate(data);
+      }
+      
       const id_ = await this.id(this.cod);
 
       try {
@@ -30,32 +39,32 @@ export default class JModel {
         if (!id) {
           try {
             await this.file.update({ [id_]: data });
-            console.log(`Update data: ${id_}`);
+            print(`Update data: ${id_}`);
           } catch (error) {
-            console.log({ error: error });
+            print({ error: error });
           }
         } else {
           try {
             await this.file.update({ [id]: data });
-            console.log(`Update data: ${id}`);
+            print(`Update data: ${id}`);
           } catch (error) {
-            console.log({ error: error });
+            print({ error: error });
           }
         }
       } catch (error) {
         if (!id) {
           try {
             await this.file.create({ [id_]: data });
-            console.log(`Create data: ${id_}`);
+            print(`Create data: ${id_}`);
           } catch (error) {
-            console.log({ error: error });
+            print({ error: error });
           }
         } else {
           try {
             await this.file.create({ [id]: data });
-            console.log(`Create data: ${id}`);
+            print(`Create data: ${id}`);
           } catch (error) {
-            console.log({ error: error });
+            print({ error: error });
           }
         }
       }
