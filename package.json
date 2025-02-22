@@ -1,6 +1,6 @@
 {
-  "name": "jdatas",
-  "version": "1.0.1",
+  "name": "jdb",
+  "version": "1.1",
   "description": "Uma biblioteca para manipulação de dados com suporte a collection, esquemas, e validação em uma pasta local utilizando json.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,17 @@
     "type": "git",
     "url": "https://github.com/GabeMCM/Jsondtb"
   },
-  "keywords": ["jsondtb", "jdatas", "database", "data", "validation", "schema", "json", "local"],
+  "keywords": [
+    "jsondtb",
+    "jdatas",
+    "JDB",
+    "database",
+    "data",
+    "validation",
+    "schema",
+    "json",
+    "local"
+  ],
   "author": "GabeMCM",
   "license": "MIT",
   "dependencies": {

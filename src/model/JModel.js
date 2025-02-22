@@ -8,7 +8,7 @@ import JSchema from "../schema/JSchema.js";
 export default class JModel {
   // Construtor da classe JModel que inicializa os atributos da instância.
   // Constructor of the JModel class that initializes the instance attributes.
-  constructor(name, directory, objSchema, cod = 0) {
+  constructor(name, directory, objSchema, cod = directory) {
     this.name = name;
     this.file = new File(directory, name);
     this.jschema = new JSchema(objSchema);
@@ -34,6 +34,7 @@ export default class JModel {
       const id_ = await this.id(this.cod);
 
       try {
+        await this.file.checkOrCreateFolder();
         await this.file.check();
 
         if (!id) {

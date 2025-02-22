@@ -14,22 +14,29 @@ npm install jdatas
 
 ```javascript
 // Importe a biblioteca
-const jdatas = require('jdatas');
+const JDB = require('JDB');
 
 // Crie uma instância do JDB com o diretório onde os dados serão armazenados
-const db = new JDB('/caminho/para/o/diretorio');
+// O caminho para o arquivo não precisa ser criado manualmente, um exemplo:
+// const salersUsers = new JDB('salers/users'); cria uma pasta users dentro de uma pasta salers na raiz do projeto. 
+const salersUsers = new JDB('caminho/para/o/diretorio'); 
 
-// Defina o esquema para validar os dados
-const userSchema = db.Schema{
+// Defina o esquema para validar os dados posteriormente
+const userSchema = {
   nome: String,
   idade: Number,
   email: String
 };
 
 // Crie um modelo para manipular os dados com o esquema definido
-const userModel = db.Model('usuarios', userSchema);
+// Neste exemplo abaixo, o 'usuarios' será o nome do arquivo. Pode ser definido também um código nesta parte para identificar dentro do id automático ao que se refere:
+// id automátido => '0/salers@2212025|1716|¨1740255392180'
+// id com código definido como 'user' => 'user/salers@2212025|1716|¨1740255392180'
+const userModel = salersUsers.Model('usuarios', userSchema);
 
+// Por retornar uma promise, pode e deve ser usado como try/catch, ou then/catch
 // Salve dados no modelo
+// Dentro de save, pode-se inserir uma id manualmente, deixando livre a decisão que for melhor para cada projeto.
 try {
   userModel.save({ 
     nome: 'João', 

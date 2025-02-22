@@ -81,4 +81,30 @@ export default class File {
       }
     });
   }
+
+  // Verifica a existencia da pasta e cria se for necessário.
+  // Verify and create path.
+  checkOrCreateFolder() {
+    // Extraindo o diretório (a parte do caminho antes do nome do arquivo)
+    const folderPath = this.direct.substring(0, this.direct.lastIndexOf('/'));
+    return new Promise((resolve, reject) => {
+      fs.access(folderPath, fs.constants.F_OK, (err) => {
+        if (!err) {
+          // A pasta existe
+          resolve(true);
+        } else {
+          // A pasta não existe; tenta criá-la
+          fs.mkdir(folderPath, { recursive: true }, (err2) => {
+            if (err2) {
+              reject(new Error(`Falha ao criar a pasta: ${err2.message}`));
+            } else {
+              resolve(true);
+            }
+          });
+        }
+      });
+    });
+  }
+
+
 }
