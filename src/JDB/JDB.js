@@ -3,7 +3,7 @@
 
 import JModel from "../model/JModel.js";
 
-class Jdatas {
+class JDB {
   constructor(directory){
     this.directory = directory
   }
@@ -16,4 +16,4 @@ class Jdatas {
 }
 
 
-export default Jdatas;
+export default JDB;

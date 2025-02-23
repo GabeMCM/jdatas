@@ -77,20 +77,21 @@ export default class JModel {
   // Função assíncrona para obter todos os dados do arquivo.
   // Asynchronous function to get all data from the file.
   async getAll() {
+    let data = '';
     try {
-      const data = await this.file.read();
-      return data;
+      data = await this.file.read();
     } catch (error) {
       console.error({ error: error });
     }
+    return data;
   }
 
   // Função assíncrona para encontrar dados que correspondem ao objeto fornecido.
   // Asynchronous function to find data that matches the provided object.
   async findAll(obj) {
+    let result = {};
     try {
       const data = await this.getAll();
-      let result = {};
       for (const key in data) {
         for (const valor in data[key]) {
           if (obj.hasOwnProperty(valor)) {
@@ -100,10 +101,10 @@ export default class JModel {
           }
         }
       }
-      return result;
     } catch (error) {
       console.error({ error: error });
     }
+    return result;
   }
 
   // Função assíncrona para encontrar exatamente dados que correspondem ao objeto fornecido.
